@@ -17,6 +17,21 @@ This repository contains homebrew formulas for proxmark3 project with it depende
 
    `brew install --HEAD proxmark3` -- for latest non-stable from GitHub (use this if previous command fails)
 
+### Usage
+
+Proxmark3 will be installed in `/usr/local/bin/proxmark3`  
+
+Firmware located at `/usr/local/share/firmware/`  
+
+#### Connect to device
+`proxmark3 /dev/tty.usbmodemXXXX` 
+
+#### Flashing firmware  
+`sudo proxmark3-flasher /dev/tty.usbmodemXXXX /usr/local/share/firmware/fullimage.elf`  
+
+#### Flashing bootloader  
+`sudo proxmark3-flasher -b /dev/tty.usbmodemXXXX /usr/local/share/firmware/bootrom.elf`  
+
 ### Info
 
 Current release is failed to build, so use `--HEAD` version.  
