@@ -30,7 +30,7 @@ Firmware located at `/usr/local/share/firmware/`
 `sudo proxmark3-flasher /dev/tty.usbmodemXXXX /usr/local/share/firmware/fullimage.elf`  
 
 #### Flashing bootloader  
-`sudo proxmark3-flasher -b /dev/tty.usbmodemXXXX /usr/local/share/firmware/bootrom.elf`  
+`sudo proxmark3-flasher /dev/tty.usbmodemXXXX -b /usr/local/share/firmware/bootrom.elf`  
 
 ### Info
 
