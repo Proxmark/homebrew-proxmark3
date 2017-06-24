@@ -34,8 +34,6 @@ Firmware located at `/usr/local/share/firmware/`
 
 ### Info
 
-Current release is failed to build, so use `--HEAD` version.  
-
 Sucessfully tested on `macOS Sierra 10.12.3` 
 
 
