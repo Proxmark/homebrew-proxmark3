@@ -51,8 +51,10 @@ class Proxmark3 < Formula
     (bin/"traces").install Dir["traces/*"]
     
     # emv public keys file
-    (bin/"emv").mkpath
-    (bin/"emv").install "client/emv/capk.txt"
+    if File.exist?("client/emv/capk.txt") then
+      (bin/"emv").mkpath
+      (bin/"emv").install "client/emv/capk.txt"
+    end
 
     share.mkpath
     # compiled firmware for flashing
