@@ -51,7 +51,7 @@ class Proxmark3 < Formula
     (bin/"traces").install Dir["traces/*"]
     
     # emv public keys file
-	if File.exist?("client/emv/capk.txt") then
+    if File.exist?("client/emv/capk.txt") then
       (bin/"emv").mkpath
       (bin/"emv").install "client/emv/capk.txt"
     end
