@@ -1,17 +1,17 @@
 class Proxmark3 < Formula
   desc "Proxmark3 client, CDC flasher, HID flasher and firmware bundle"
   homepage "http://www.proxmark.org"
-  url "https://github.com/proxmark/proxmark3/archive/v3.0.1.tar.gz"
-  sha256 "bace0dd34e35923bfd926cf0943e615a00b2588bb958a13afde3fd46cd34a821"
+  url "https://github.com/proxmark/proxmark3/archive/v3.1.0.tar.gz"
+  sha256 "855bf191479b1389c0761dc34fa6c738dc775599e95e679847f4c7f1c276d8de"
   head "https://github.com/proxmark/proxmark3.git"
 
-  depends_on "automake" => :build
+#  depends_on "automake" => :build
   depends_on "readline"
   depends_on "p7zip" => :build
   depends_on "libusb"
   depends_on "libusb-compat"
   depends_on "pkg-config" => :build
-  depends_on "wget"
+#  depends_on "wget"
   depends_on "qt5"
   depends_on "perl"
   depends_on "proxmark/proxmark3/arm-none-eabi-gcc" => :build
@@ -50,6 +50,12 @@ class Proxmark3 < Formula
     (bin/"traces").mkpath
     (bin/"traces").install Dir["traces/*"]
     
+    # emv public keys file
+	if File.exist?("client/emv/capk.txt") then
+      (bin/"emv").mkpath
+      (bin/"emv").install "client/emv/capk.txt"
+    end
+
     share.mkpath
     # compiled firmware for flashing
     (share/"firmware").mkpath
